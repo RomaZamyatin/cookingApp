@@ -6,13 +6,11 @@ export const App = () => {
 	// Можно задать 2 состояния — steps и activeIndex
 	const [steps] = useState(data)
 	const [activeIndex,setActiveIndex] = useState (0)
-	
-	//флаги конечного и начального шага
-	let onfirstStep = true;
-	let onLastStep = false;
 
-	activeIndex == 6 ? onLastStep = true: onfirstStep = false
-	activeIndex == 0 ? onfirstStep = true: onfirstStep = false
+	//флаги конечного и начального шага
+
+	const onfirstStep = activeIndex == 0;
+	const onLastStep = activeIndex == steps.length-1;
 
 	//обработка клика 'Далее'
 	const handleForwardClick = () => {
